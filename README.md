@@ -76,3 +76,35 @@ The `CameraCalibration` class provides functionality for camera calibration usin
    ```python
    calibration = CameraCalibration((9, 6))
 
+# Perspective Transformation Class Documentation
+
+## Overview
+
+The `PerspectiveTransformation` class provides functionality for performing a perspective transformation on an input image. This transformation is used to obtain a specific view of the image by changing the perspective and orientation of objects within it.
+
+## Class Attributes
+
+- `frame`: The input image on which the perspective transformation will be applied.
+
+## Class Methods
+
+1. `__init__(self, myframe)`
+    - **Initialization Method**
+    - Initializes a `PerspectiveTransformation` object with the provided input image.
+
+2. `pointingOut(self)`
+    - **Pointing Out Method**
+    - Applies perspective transformation to the input image to point out specific regions of interest by defining four key points.
+
+    **Returns:**
+    - `TransIMG` (numpy.ndarray): The transformed image with the defined region of interest.
+
+**Usage Example**
+
+1. Initialize the `PerspectiveTransformation` object with the input image:
+
+   ```python
+   my_frame = cv2.imread('input_image.jpg')
+   perspective_transform = PerspectiveTransformation(my_frame)
+   
+
