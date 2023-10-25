@@ -1,4 +1,3 @@
-#LANE LINE DETECTION PROJECT
 # Project Overview:
 
 This project deals with the challenge of lane line detection using video footage captured from a car's front camera. The main goal is to identify and analyze lane lines in the video. The following steps outline the process:
@@ -37,3 +36,43 @@ This project follows an object-oriented approach. Several .py files represent im
 1. Download all project files and place them in a single folder.
 2. Open the folder in your preferred Python IDE, such as Visual Studio Code.
 3. Execute 'main.py' to initiate the project.
+
+
+# Classes
+As mentioned each file in this project represents a class. Here is a brief review of how they actually work.
+# Camera Calibration Class Documentation
+
+## Overview
+
+The `CameraCalibration` class provides functionality for camera calibration using a series of chessboard images. It enables the calibration of a camera, calculation of the camera matrix, and undistortion of images.
+
+## Class Attributes
+
+- `pattern_size` (tuple): The size of the chessboard pattern in the format (number of columns, number of rows).
+- `obj_points` (list): A list of 3D points in real-world space.
+- `img_points` (list): A list of 2D points in the image plane.
+- `calibrated` (bool): A flag indicating whether the camera has been successfully calibrated.
+- `mtx` (numpy.ndarray): The camera matrix.
+- `dist` (numpy.ndarray): The distortion coefficients.
+
+## Class Methods
+
+1. `__init__(self, pattern_size)`
+   - **Initialization Method**
+   - Initializes a `CameraCalibration` object with the specified chessboard pattern size.
+
+2. `calibrate(self)`
+   - **Calibration Method**
+   - Calibrates the camera by finding chessboard corners in a series of images and calculating the camera matrix and distortion coefficients.
+
+3. `undistort(self, image)`
+   - **Undistortion Method**
+   - Undistorts an input image using the camera matrix and distortion coefficients if the camera is calibrated.
+
+## Usage Example
+
+1. Initialize the `CameraCalibration` object with the desired chessboard pattern size.
+   
+   ```python
+   calibration = CameraCalibration((9, 6))
+
