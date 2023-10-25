@@ -34,13 +34,3 @@ myUnimange = cam1.UndistortedCam('image_to_undistort.jpg')
 cv2.imshow('Here you go', myUnimange)
 cv2.waitKey(1000)
 cv2.destroyAllWindows()
-
-
-
-
-
-# for image in images:
-#     img = cv2.imread(image)    #reads in each picture from images
-#     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)   #makes a copy of that particular image
-    
-    
