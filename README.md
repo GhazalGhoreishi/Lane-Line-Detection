@@ -106,5 +106,50 @@ The `PerspectiveTransformation` class provides functionality for performing a pe
    ```python
    my_frame = cv2.imread('input_image.jpg')
    perspective_transform = PerspectiveTransformation(my_frame)
+
+# Color and Gradient Thresholding Class Documentation
+
+## Overview
+
+The `CGT` class provides methods for performing color and gradient thresholding on an input image. This class is used for extracting specific features from an image that can aid in various computer vision and image processing tasks.
+
+## Class Attributes
+
+- `frame`: The input image on which the color and gradient thresholding operations will be applied.
+
+## Class Methods
+
+1. `__init__(self, frame)`
+   - **Initialization Method**
+   - Initializes a `CGT` object with the provided input image.
+
+2. `hlsCVT(self, thresh=(150, 255))`
+   - **HLS Color Thresholding Method**
+   - Converts the input image to the HLS color space and applies a threshold to the S-channel to extract specific color information.
+
+   **Parameters:**
+   - `thresh` (tuple): A tuple specifying the lower and upper thresholds for the S-channel.
+
+   **Returns:**
+   - `binary` (numpy.ndarray): A binary image where pixels within the specified threshold range are set to 255.
+
+3. `pipeline(self, s_thresh=(150, 255), sx_thresh=(10, 100))`
+   - **Combined Color and Gradient Thresholding Method**
+   - Applies a combination of color and gradient thresholding to the input image. The method extracts features from the S-channel of the HLS color space and the gradient of the L-channel.
+
+   **Parameters:**
+   - `s_thresh` (tuple): A tuple specifying the lower and upper thresholds for the S-channel.
+   - `sx_thresh` (tuple): A tuple specifying the lower and upper thresholds for the gradient in the L-channel.
+
+   **Returns:**
+   - `binary_image` (numpy.ndarray): A binary image where pixels within the specified threshold ranges are set to 255, indicating features of interest.
+
+## Usage Example
+
+1. Initialize the `CGT` object with the input image:
+
+   ```python
+   input_image = cv2.imread('input_image.jpg')
+   color_gradient_thresholding = CGT(input_image)
    
 
